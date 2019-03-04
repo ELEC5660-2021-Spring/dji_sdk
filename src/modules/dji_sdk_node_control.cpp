@@ -115,7 +115,8 @@ DJISDKNode::flightControl(uint8_t flag, float xSP, float ySP, float zSP,
     // double temp1, temp2;
     // rotationDes.getRPY(temp1, temp2, yawCmd);
 
-    yawCmd = RAD2DEG(yawCmd);
+    yawCmd = RAD2DEG(yawSP);
+    // ROS_INFO("ToFC yaw angle %3.2f", yawCmd );
   }
   else if (YAW == Control::YAW_RATE)
   {
@@ -134,6 +135,7 @@ DJISDKNode::flightControlSetpointCallback(
   float   ySP   = pMsg->axes[1];
   float   zSP   = pMsg->axes[2];
   float   yawSP = pMsg->axes[3];
+  ROS_INFO("Yaw %3.2f", yawSP);
   uint8_t flag  = (uint8_t)(pMsg->axes[4]);
 
   flightControl(flag, xSP, ySP, zSP, yawSP);
