@@ -19,7 +19,7 @@ find_package(DJIOSDK REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-
+# add_compile_options(-pg)
 set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS} -g -O3")
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -137,7 +137,7 @@ catkin_package(
 ###########
 ## Build ##
 ###########
-
+# set(catkin_LIBRARIES} ${catkin_LIBRARIES} -pg)
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 # include_directories(include)
