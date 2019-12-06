@@ -819,7 +819,7 @@ DJISDKNode::publish400HzData(Vehicle* vehicle, RecvContainer recvFrame,
     {
       // ROS_INFO("ts %dms", packageTimeStamp.time_ms);
       // ROS_INFO("ts %fms", _TICK2ROSTIME(packageTimeStamp.time_ns).toSec()*1000);
-      msg_time = p->base_time + _TICK2ROSTIME(packageTimeStamp.time_ns);
+      //msg_time = p->base_time + _TICK2ROSTIME(packageTimeStamp.time_ns);
     }
     else
     {
