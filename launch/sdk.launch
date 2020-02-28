@@ -1,7 +1,8 @@
 <launch>
     <arg name="drone_number" default="1"/>
+    <arg name="output" default="screen" />
     <env name="GMON_OUT_PREFIX" value="dji_sdk" />
-    <node pkg="dji_sdk" type="dji_sdk_node" name="dji_sdk_$(arg drone_number)" output="screen" >
+    <node pkg="dji_sdk" type="dji_sdk_node" name="dji_sdk_$(arg drone_number)" output="$(arg output)" >
     <!-- node parameters -->
     <param name="serial_name"   type="string"   value="/dev/ttyTHS2"/>
     <param name="baud_rate"     type="int"      value="921600"/>
