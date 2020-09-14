@@ -817,9 +817,21 @@ DJISDKNode::publish400HzData(Vehicle* vehicle, RecvContainer recvFrame,
     p->alignRosTimeWithFlightController(now_time, packageTimeStamp.time_ns);
     if (p->curr_align_state == ALIGNED)
     {
-      // ROS_INFO("ts %dms", packageTimeStamp.time_ms);
-      // ROS_INFO("ts %fms", _TICK2ROSTIME(packageTimeStamp.time_ns).toSec()*1000);
+      // static int last_ns_time = 0;
+      // if ( packageTimeStamp.time_ns - last_ns_time < 2000) 
+      //   printf("DNS %d\n", packageTimeStamp.time_ns - last_ns_time);
+      // last_ns_time = packageTimeStamp.time_ns;
       msg_time = p->base_time + _TICK2ROSTIME(packageTimeStamp.time_ns);
+
+      // static ros::Time last_msg_time;
+
+      // if((msg_time - last_msg_time).toSec() < 0.002) 
+      // {
+      //   ROS_INFO("DMSG T %fms", (msg_time - last_msg_time).toSec()*1000);
+      // }
+
+      // last_msg_time = msg_time;
+
     }
     else
     {
