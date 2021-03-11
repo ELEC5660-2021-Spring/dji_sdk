@@ -821,7 +821,7 @@ DJISDKNode::publish400HzData(Vehicle* vehicle, RecvContainer recvFrame,
       // if ( packageTimeStamp.time_ns - last_ns_time < 2000) 
       //   printf("DNS %d\n", packageTimeStamp.time_ns - last_ns_time);
       // last_ns_time = packageTimeStamp.time_ns;
-      msg_time = p->base_time + _TICK2ROSTIME(packageTimeStamp.time_ns);
+      // msg_time = p->base_time + _TICK2ROSTIME(packageTimeStamp.time_ns);
 
       // static ros::Time last_msg_time;
 
